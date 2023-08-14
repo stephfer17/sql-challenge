@@ -1,4 +1,3 @@
-Drop Table  employees
 --Creating the tables--
 Create Table employees (
 emp_no INTEGER Primary Key  NOT NULL,
@@ -46,16 +45,14 @@ e.sex
 From Salaries as S
 inner join employees as e On
 e.emp_no = S.emp_no
-Select * from salary_emp 
+Select * from salary_emp
 -- Data Analysis 2-- 
 --https://stackoverflow.com/questions/9891025/sql-select-from-column-where-year-2010 helped me 
-CREATE VIEW year_1986 As
 Select employees.last_name, 
 employees.first_name,
 employees.hire_date
 From employees
 where hire_date >= '1/1/1986'  And hire_date < '1/1/1987'
-Select * from year_1986
 -- Data Analysis 3 -- Doing two inner joins 
 CREATE VIEW managers_name As
 Select departments.dept_no,
@@ -64,7 +61,7 @@ department_mana.emp_no
 From department_mana
 inner join departments on 
 department_mana.dept_no = departments.dept_no
-select * from managers_name
+--select * from managers_name-- As a test
 --- Doing another join 
 Select managers_name.dept_no,
 managers_name.dept_name,
@@ -82,7 +79,7 @@ department_emp.emp_no
 From department_emp
 inner join departments on 
 department_emp.dept_no = departments.dept_no
-select * from employee_name
+--select * from employee_name-- As a test
 --
 Select employee_name.dept_no,
 employee_name.dept_name,
@@ -115,7 +112,7 @@ select *
 from department_emp 
 where dept_no ='d005' or  
 dept_no ='d007'
-select * from sales_dev
+--select * from sales_dev -- As a test
 -- getting joining the departments 
 create view title_dept As
 select departments.dept_name,
@@ -123,7 +120,7 @@ sales_dev.emp_no
 from sales_dev
 inner join departments on
 sales_dev.dept_no=departments.dept_no
-select * from title_dept
+--select * from title_dept-- As a test
 -- joining the dept_name and employee id with the names 
 select employees.last_name, 
 employees.first_name,
